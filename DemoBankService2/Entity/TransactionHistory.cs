@@ -19,5 +19,28 @@ namespace DemoBankService2.Entity
         public string ReceiverCode { get; set; }
         public int Type { get; set; }
         public string Message { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
+        public DateTime DeletedAt { get; set; }
+
+        public void ToString()
+        {
+            Console.OutputEncoding = Encoding.UTF8;
+
+            string typeTransaction = "";
+            if (this.Type == 1)
+            {
+                typeTransaction = "Withdrawal";
+            }
+            else if(this.Type == 2)
+            {
+                typeTransaction = "Deposit";
+            }
+            else if(this.Type == 3)
+            {
+                typeTransaction = "Tranfer";
+            }
+            Console.WriteLine($"Code: {Code}, Name: {Type}");
+        }
     }
 }
