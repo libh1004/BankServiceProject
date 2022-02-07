@@ -17,17 +17,18 @@ namespace DemoBankService2
         private ConnectionHelper _connectionHelper = new ConnectionHelper();
         private MD5Helper _md5Helper = new MD5Helper();
         private Account _account = null;
+
         public string GetInfo(string username, string password)
         {
 
             MySqlConnection connection = new MySqlConnection();
             MySqlCommand command = new MySqlCommand();
             command.Connection = connection;
-            command.CommandText = $"select * from account where Phone = "
-            var inforCustomer = new Account()
-            {
+            //command.CommandText = $"select * from account where Phone = "
+            //var inforCustomer = new Account()
+            //{
 
-            }
+            //}
             throw new NotImplementedException();
         }
 
@@ -42,6 +43,16 @@ namespace DemoBankService2
         }
 
         public TransactionHistory Tranfer(string username, string password, double amount)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Account Register(Account account)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Account Login(string username, string password)
         {
             throw new NotImplementedException();
         }

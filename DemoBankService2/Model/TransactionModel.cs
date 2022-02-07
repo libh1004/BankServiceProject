@@ -14,23 +14,23 @@ namespace DemoBankService2.Model
         private ConnectionHelper _connectionHelper = new ConnectionHelper();
         public AccountModel Deposit(string accountNumber, double money, double newBalance)
         {
-            Account account = null;
-            var connection = _connectionHelper.Connection();
-            MySqlCommand cmd = new MySqlCommand();
-            cmd.Connection = connection;
-            try
-            {
-                cmd.CommandText = $"update account set balance = {newBalance} where AccountBalance = '{accountNumber}";
-                cmd.ExecuteNonQuery();
-                cmd.CommandText =
-                    $"insert into transactionhistory(Id, Code, Name, Amount, Fee, SenderCode, ReceiverCode, Type, Message, CreatedAt, UpdatedAt)" +
-                    $" values (@Id, @Code, @Name, @Amount, @Fee, @SenderCode, @ReceiverCode, @Type, @Message, @CreatedAt, @UpdatedAt)";
-                cmd.Parameters.AddWithValue("@Id", new TransctionService().Create)
-            }
-            catch ()
-            {
+            //Account account = null;
+            //var connection = _connectionHelper.Connection();
+            //MySqlCommand cmd = new MySqlCommand();
+            //cmd.Connection = connection;
+            //try
+            //{
+            //    cmd.CommandText = $"update account set balance = {newBalance} where AccountBalance = '{accountNumber}";
+            //    cmd.ExecuteNonQuery();
+            //    cmd.CommandText =
+            //        $"insert into transactionhistory(Id, Code, Name, Amount, Fee, SenderCode, ReceiverCode, Type, Message, CreatedAt, UpdatedAt)" +
+            //        $" values (@Id, @Code, @Name, @Amount, @Fee, @SenderCode, @ReceiverCode, @Type, @Message, @CreatedAt, @UpdatedAt)";
+            //    cmd.Parameters.AddWithValue("@Id", new TransctionService().Create)
+            //}
+            //catch ()
+            //{
 
-            }
+            //}
             return null;
         }
     }
